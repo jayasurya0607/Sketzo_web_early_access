@@ -185,9 +185,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // === Smooth Scroll (but with step-like behavior) ===
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
             const targetId = this.getAttribute('href');
+
+            // Skip if it's an external link or empty hash
+            if (!targetId || targetId === '#' || targetId.length <= 1) {
+                return;
+            }
+
+            e.preventDefault();
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
@@ -589,7 +594,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (carouselTrack && carouselSlides.length > 0) {
         let currentSlide = 0;
         const totalSlides = carouselSlides.length;
-        const autoScrollInterval = 1500; // 1 second
+        const autoScrollInterval = 1250; // 1 second
 
         // Function to go to a specific slide
         function goToSlide(index) {
