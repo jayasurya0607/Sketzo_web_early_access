@@ -1,11 +1,11 @@
 {
     "name": "pixel-meadows-email-api",
     "version": "1.0.0",
-    "description": "Email API for Pixel Meadows using Resend",
+    "description": "Email API for Pixel Meadows using Gmail API",
     "scripts": {
         "dev": "vercel dev"
     },
     "dependencies": {
-        "resend": "^2.0.0"
+        "googleapis": "^128.0.0"
     }
 }

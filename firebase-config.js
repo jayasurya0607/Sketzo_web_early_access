@@ -12,9 +12,11 @@ const firebaseConfig = {
 };
 
 // ============================================
-// Email API Configuration (Vercel + Resend)
+// EmailJS Configuration
 // ============================================
-const EMAIL_API_URL = "https://sketzomail.vercel.app/api/send-welcome-email";
+const EMAILJS_SERVICE_ID = 'service_8fgrbgd';
+const EMAILJS_TEMPLATE_ID = 'template_rgd9vte';
+const EMAILJS_PUBLIC_KEY = 'EQiO89W7uQilk74Eo';
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -29,37 +31,33 @@ const googleProvider = new firebase.auth.GoogleAuthProvider();
 // Authentication Functions
 // ============================================
 
-// Send welcome email via Vercel API
+// Send welcome email via EmailJS
 async function sendWelcomeEmail(user) {
     console.log('📧 Sending welcome email to:', user.email);
 
-    // Skip if API URL not configured
-    if (EMAIL_API_URL.includes("YOUR_VERCEL_URL")) {
-        console.log('⚠️ Email API not configured yet. Deploy to Vercel first.');
-        return false;
-    }
-
     try {
-        const response = await fetch(EMAIL_API_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                email: user.email,
-                name: user.displayName || 'Pixel Friend'
-            })
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            console.log('✅ Welcome email sent successfully!');
-            return true;
+        // Initialize EmailJS (if not already done)
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init(EMAILJS_PUBLIC_KEY);
         } else {
-            console.error('❌ Email API error:', data.error);
+            console.error('❌ EmailJS library not loaded');
             return false;
         }
+
+        // Send email using EmailJS
+        const templateParams = {
+            user_name: user.displayName || 'Pixel Friend',
+            email: user.email
+        };
+
+        const response = await emailjs.send(
+            EMAILJS_SERVICE_ID,
+            EMAILJS_TEMPLATE_ID,
+            templateParams
+        );
+
+        console.log('✅ Welcome email sent successfully!', response);
+        return true;
     } catch (error) {
         console.error('❌ Failed to send email:', error);
         return false;
