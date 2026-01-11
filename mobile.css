@@ -1,0 +1,554 @@
+/* ============================================
+   MOBILE RESPONSIVE DESIGN
+   Following best practices: vertical stacking, bigger text, thumb-friendly
+   ============================================ */
+
+/* Prevent horizontal scroll */
+body {
+    overflow-x: hidden;
+}
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+
+    /* Navigation - Stack vertically */
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .nav-link {
+        font-size: 11px;
+        padding: 8px 12px;
+    }
+
+    /* Hero - Vertical stacking */
+    .hero-section {
+        flex-direction: column;
+        padding: 60px 20px;
+    }
+
+    .hero-main-title {
+        font-size: 2.5rem !important;
+    }
+
+    .hero-description {
+        font-size: 1.1rem !important;
+    }
+
+    /* Features - Vertical */
+    .features-split-container {
+        flex-direction: column;
+    }
+
+    .features-list-column,
+    .features-detail-column {
+        width: 100%;
+    }
+}
+
+/* Mobile phones (768px and below) - MAIN BREAKPOINT */
+@media (max-width: 768px) {
+
+    /* BIGGER TEXT for mobile */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Hide background for performance */
+    .pixel-background {
+        display: none;
+    }
+
+    /* Navigation - HAMBURGER MENU */
+    .pixel-nav {
+        padding: 12px 16px;
+        position: relative;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    /* HIDE navigation links by default on mobile */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--grass-sage);
+        flex-direction: column;
+        padding: 16px;
+        border: 4px solid var(--forest-deep);
+        box-shadow: 4px 4px 0 var(--earth-dark);
+        z-index: 1000;
+        gap: 0;
+    }
+
+    /* Show nav links when active */
+    .nav-links.active {
+        display: flex !important;
+    }
+
+    .nav-link {
+        font-size: 14px;
+        padding: 14px 16px;
+        min-height: 44px;
+        display: block;
+        width: 100%;
+        text-align: left;
+        border-bottom: 2px solid var(--forest-deep);
+    }
+
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    /* Hamburger menu button - show on mobile */
+    .mobile-menu-btn {
+        display: block !important;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: var(--text-light);
+        cursor: pointer;
+        padding: 8px;
+    }
+
+    /* Hero - VERTICAL STACKING */
+    .hero-section {
+        min-height: 70vh;
+        padding: 40px 20px;
+        flex-direction: column;
+    }
+
+    .hero-text-container {
+        padding: 24px;
+        max-width: 100%;
+    }
+
+    .hero-main-title {
+        font-size: 2rem !important;
+        /* Bigger on mobile */
+        line-height: 1.3;
+        margin-bottom: 16px !important;
+    }
+
+    .hero-description {
+        font-size: 1rem !important;
+        /* Bigger, more readable */
+        line-height: 1.6;
+        margin-bottom: 24px !important;
+    }
+
+    /* Buttons - THUMB-FRIENDLY */
+    .pixel-btn {
+        font-size: 1rem !important;
+        /* Bigger text */
+        padding: 16px 32px !important;
+        /* Bigger tap area */
+        min-height: 44px;
+        /* iOS minimum */
+        width: 100%;
+        /* Full width on mobile */
+        max-width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    /* About Section - VERTICAL */
+    .about-section {
+        padding: 60px 20px;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        /* Bigger */
+        margin-bottom: 24px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        /* Single column */
+        gap: 24px;
+    }
+
+    .about-text {
+        font-size: 1rem;
+        /* Bigger, readable */
+        line-height: 1.7;
+    }
+
+    .about-image {
+        max-height: 250px;
+    }
+
+    .about-image img {
+        max-height: 250px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* Features - VERTICAL STACKING */
+    .features-split-section {
+        padding: 60px 0;
+    }
+
+    .features-split-container {
+        flex-direction: column;
+        /* Vertical */
+    }
+
+    .features-list-column {
+        position: static;
+        width: 100%;
+        padding: 24px 20px;
+    }
+
+    .features-heading {
+        font-size: 1.75rem;
+        /* Bigger */
+        margin-bottom: 20px;
+    }
+
+    .features-nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns */
+        gap: 12px;
+    }
+
+    .feature-nav-item {
+        font-size: 0.9rem;
+        /* Bigger */
+        padding: 14px 12px;
+        min-height: 44px;
+        /* Thumb-friendly */
+        text-align: center;
+    }
+
+    .features-detail-column {
+        width: 100%;
+        padding: 24px 20px;
+    }
+
+    .feature-detail-box {
+        padding: 24px;
+    }
+
+    .feature-detail-title {
+        font-size: 1.5rem;
+        /* Bigger */
+        margin-bottom: 16px;
+    }
+
+    .feature-detail-text {
+        font-size: 1rem;
+        /* Bigger */
+        line-height: 1.7;
+    }
+
+    /* Demo Section */
+    .demo-section {
+        padding: 60px 20px;
+    }
+
+    .demo-carousel {
+        height: 350px;
+        max-width: 100%;
+    }
+
+    .demo-slide img {
+        max-height: 330px;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    /* Join Section - VERTICAL */
+    .join-section {
+        padding: 60px 20px;
+    }
+
+    .join-text {
+        font-size: 1rem;
+        /* Bigger */
+        line-height: 1.7;
+        margin-bottom: 24px;
+    }
+
+    .join-buttons {
+        flex-direction: column;
+        /* Vertical stacking */
+        gap: 16px;
+        width: 100%;
+    }
+
+    .join-buttons .pixel-btn {
+        width: 100%;
+        /* Full width */
+        max-width: 100%;
+    }
+
+    .social-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 24px;
+    }
+
+    .social-icon {
+        width: 56px;
+        /* Bigger for thumbs */
+        height: 56px;
+        min-height: 44px;
+    }
+
+    .social-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Blog Section - VERTICAL */
+    .blog-section {
+        padding: 60px 20px;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+        /* Single column */
+        gap: 20px;
+    }
+
+    .blog-card {
+        max-width: 100%;
+    }
+
+    .blog-title {
+        font-size: 1.1rem;
+        /* Bigger */
+    }
+
+    .blog-excerpt {
+        font-size: 0.95rem;
+        /* Bigger */
+        line-height: 1.6;
+    }
+
+    .blog-link {
+        font-size: 0.9rem;
+        padding: 12px 16px;
+        min-height: 44px;
+        /* Thumb-friendly */
+    }
+
+    /* Blog Modal - Full screen */
+    .blog-modal-content {
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        padding: 24px;
+        border-radius: 0;
+    }
+
+    .blog-modal-title {
+        font-size: 1.5rem;
+        /* Bigger */
+    }
+
+    .blog-modal-body {
+        font-size: 1rem;
+        /* Bigger */
+        line-height: 1.7;
+    }
+
+    /* Auth Modal */
+    .auth-modal-content {
+        width: 95%;
+        max-width: 95%;
+        padding: 24px;
+    }
+
+    .auth-title {
+        font-size: 1.5rem;
+        /* Bigger */
+    }
+
+    .auth-subtitle {
+        font-size: 1rem;
+        /* Bigger */
+    }
+
+    .google-btn {
+        font-size: 1rem;
+        /* Bigger */
+        padding: 14px 20px;
+        min-height: 44px;
+        /* Thumb-friendly */
+    }
+
+    /* Footer */
+    .pixel-footer {
+        padding: 24px 20px;
+    }
+
+    .footer-bottom p {
+        font-size: 0.85rem;
+    }
+
+    /* Cards */
+    .pixel-card {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    /* Section spacing */
+    .content-section {
+        padding: 60px 20px;
+    }
+
+    .section-container {
+        max-width: 100%;
+        padding: 0;
+    }
+}
+
+/* Small phones (480px and below) */
+@media (max-width: 480px) {
+
+    /* Even BIGGER text for small screens */
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    /* Hero */
+    .hero-main-title {
+        font-size: 1.75rem !important;
+    }
+
+    .hero-description {
+        font-size: 0.95rem !important;
+    }
+
+    /* Navigation */
+    .logo-text {
+        font-size: 16px;
+    }
+
+    .nav-link {
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+
+    /* Buttons still thumb-friendly */
+    .pixel-btn {
+        font-size: 0.95rem !important;
+        padding: 14px 28px !important;
+    }
+
+    /* Features - Keep 2 columns but smaller */
+    .feature-nav-item {
+        font-size: 0.8rem;
+        padding: 12px 8px;
+    }
+
+    /* Demo */
+    .demo-carousel {
+        height: 280px;
+    }
+
+    .demo-slide img {
+        max-height: 260px;
+    }
+
+    /* Social icons */
+    .social-icon {
+        width: 52px;
+        height: 52px;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+
+    /* ALL interactive elements = 44px minimum */
+    .pixel-btn,
+    .social-icon,
+    .feature-nav-item,
+    .blog-link,
+    .nav-link,
+    .google-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Remove hover effects on touch */
+    .pixel-btn:hover,
+    .social-icon:hover,
+    .feature-nav-item:hover,
+    .blog-link:hover {
+        transform: none;
+        box-shadow: inherit;
+    }
+
+    /* Better active/tap feedback */
+    .pixel-btn:active,
+    .social-icon:active,
+    .feature-nav-item:active {
+        opacity: 0.8;
+        transform: scale(0.98);
+    }
+}
+
+/* Landscape mode fixes */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 100vh;
+        padding: 30px 20px;
+    }
+
+    .auth-modal-content,
+    .blog-modal-content {
+        max-height: 95vh;
+        overflow-y: auto;
+    }
+}
+
+/* Flexbox & Grid helpers */
+@media (max-width: 768px) {
+
+    /* Make all flex containers wrap */
+    .flex-container {
+        flex-wrap: wrap;
+    }
+
+    /* Grid auto-fit for responsive cards */
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
