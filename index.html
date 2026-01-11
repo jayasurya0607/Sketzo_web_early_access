@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sketzo - A creative pixel art platform where ideas come to life. Join our early access.">
+    <title>Sketzo | Create Something Beautiful</title>
+
+    <!-- Pixel Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+    <!-- Fixed Pixel Art Background -->
+    <div class="pixel-background">
+        <div class="bg-image" style="background-image: url('ChatGPT Image Jan 10, 2026, 12_46_58 PM.png');"></div>
+    </div>
+
+    <!-- Authentication Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-modal-backdrop" id="authModalBackdrop"></div>
+        <div class="auth-modal-content">
+            <button class="auth-close-btn" id="authCloseBtn">✕</button>
+
+            <h2 class="auth-title">Get Early Access</h2>
+            <p class="auth-subtitle">Join our creative community!</p>
+
+            <!-- Google Sign In -->
+            <button class="google-btn" id="googleSignInBtn">
+                <svg width="18" height="18" viewBox="0 0 18 18">
+                    <path fill="#4285F4"
+                        d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" />
+                    <path fill="#34A853"
+                        d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" />
+                    <path fill="#FBBC05"
+                        d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" />
+                    <path fill="#EA4335"
+                        d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" />
+                </svg>
+                Continue with Google
+            </button>
+
+            <!-- Pixel Video -->
+            <video autoplay loop muted playsinline class="auth-video">
+                <source src="Purple Pink Pixel Art Coming Soon Video.mp4" type="video/mp4">
+            </video>
+
+            <!-- Success Message -->
+            <div class="auth-success hidden" id="authSuccess">
+                <div class="success-icon">✓</div>
+                <h3>All Done!</h3>
+                <p>You're now part of our early access community.</p>
+            </div>
+
+            <!-- Error Message -->
+            <div class="auth-error hidden" id="authError">
+                <span id="authErrorText"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="pixel-header">
+        <nav class="pixel-nav">
+            <div class="logo">
+                <span class="logo-text">Sketzo</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#demo" class="nav-link">Demo</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- SECTION 1: HERO -->
+        <section id="home" class="hero-section">
+            <!-- Subtle decorative elements (background only) -->
+
+
+            <!-- Hero content box -->
+            <div class="hero-box">
+                <!-- Center-aligned hero text content -->
+                <div class="hero-text-container">
+                    <!-- Main heading on one line -->
+                    <h1 class="hero-main-title">Welcome to Sketzo</h1>
+
+                    <!-- Description paragraph -->
+                    <p class="hero-description">
+                        A platform to make your imagination into CAD drawings.
+                        Prompt it, tweak it, and see it come alive.
+                    </p>
+
+                    <!-- Primary CTA -->
+                    <button class="pixel-btn primary hero-cta" id="earlyAccessBtn">
+                        Get Early Access
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: WHAT IS SKETZO -->
+        <section id="about" class="content-section about-section">
+            <div class="section-container">
+                <h2 class="section-title">About us</h2>
+                <div class="about-content about-grid">
+                    <div class="pixel-card about-card">
+                        <p class="about-text">
+                            This is a free CAD drawing platform built by college students who got tired of CAD,
+                            We wanted everyone to experience what CAD
+                            actually is, how it’s done, and why it matters. CAD is everywhere—from the chair you sit on
+                            to the phone in your
+                            hand—and Sketzo exists to make that first step into design simple and even
+                            fun. There are no tokens, no subscriptions, no payments, and no “trial expired”
+                            surprises—just a clean AI-assisted space to imagine, sketch, and understand CAD for free.
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <img src="SKETZO.png" alt="Sketzo" class="sketzo-illustration">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: FEATURES - Split Layout -->
+        <section id="features" class="features-split-section">
+            <div class="features-split-container">
+                <!-- Left Column - Feature List (Sticky) -->
+                <div class="features-list-column">
+                    <h2 class="features-heading">Features</h2>
+                    <nav class="features-nav">
+                        <button class="feature-nav-item active" data-feature="0">Text to 2D CAD</button>
+                        <button class="feature-nav-item" data-feature="1">Professional CAD</button>
+                        <button class="feature-nav-item" data-feature="2">Download as DXF</button>
+                        <button class="feature-nav-item" data-feature="3">Completely Free</button>
+                    </nav>
+                </div>
+
+                <!-- Right Column - Feature Details (Scrollable) -->
+                <div class="features-detail-column">
+                    <!-- Feature 0: Text to 2D CAD -->
+                    <div class="feature-detail-panel active" data-panel="0">
+                        <div class="feature-detail-box">
+                            <h3 class="feature-detail-title">Text to 2D CAD</h3>
+                            <p class="feature-detail-text">
+                                Describe what you imagine in plain text and Sketzo transforms it into a clean 2D CAD
+                                drawing, helping ideas move from words to precise lines effortlessly. No more struggling
+                                with complex tools or learning curves—just type what you want to create, and watch as
+                                our AI-powered system interprets your description and generates accurate technical
+                                drawings. Whether it's a simple bracket, a floor plan concept, or a mechanical part,
+                                Sketzo bridges the gap between imagination and engineering reality.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 1: Professional CAD Experience -->
+                    <div class="feature-detail-panel" data-panel="1">
+                        <div class="feature-detail-box">
+                            <h3 class="feature-detail-title">Professional CAD Experience</h3>
+                            <p class="feature-detail-text">
+                                Designed to feel close to real-world CAD workflows, so what you learn and draw actually
+                                makes sense beyond the screen. Sketzo isn't just a toy—it's built with industry
+                                standards in mind, featuring proper dimension annotations, layer management, and
+                                geometric constraints. The skills you develop here translate directly to professional
+                                CAD software like AutoCAD, SolidWorks, or Fusion 360. We believe learning CAD should
+                                prepare you for the real world, not lock you into a simplified playground.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2: Download as DXF -->
+                    <div class="feature-detail-panel" data-panel="2">
+                        <div class="feature-detail-box">
+                            <h3 class="feature-detail-title">Download as DXF</h3>
+                            <p class="feature-detail-text">
+                                Export your drawings as DXF files, the universal standard for CAD data exchange, ready
+                                to use in other CAD software, 3D modeling tools, CNC machines, or laser cutters. Your
+                                work isn't trapped in Sketzo—it's designed to flow seamlessly into your broader design
+                                workflow. Open your exports in AutoCAD, import them into Fusion 360, or send them
+                                directly to a manufacturing shop. One click, and your creation is ready for the next
+                                stage of its journey.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3: Completely Free -->
+                    <div class="feature-detail-panel" data-panel="3">
+                        <div class="feature-detail-box">
+                            <h3 class="feature-detail-title">Completely Free</h3>
+                            <p class="feature-detail-text">
+                                No tokens, no subscriptions, no hidden limits, no "trial expired" surprises—just a
+                                straightforward, free CAD experience for everyone. We built Sketzo because we believe
+                                access to design tools shouldn't depend on your budget. Students, hobbyists, makers, and
+                                curious minds deserve the same power that expensive software provides. Every feature is
+                                available to everyone, forever. No credit card required, no premium tier waiting to
+                                unlock the good stuff. Just pure, unlimited creativity.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: DEMONSTRATION -->
+        <section id="demo" class="content-section demo-section">
+            <div class="section-container">
+                <h2 class="section-title">See our prototype in Action</h2>
+                <p class="section-subtitle">A quick look at what you can create</p>
+                <div class="demo-content">
+                    <!-- Image Carousel -->
+                    <div class="demo-carousel">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="Screenshot 2026-01-11 092822.png" alt="Sketzo Demo 1" class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="Screenshot 2026-01-11 093049.png" alt="Sketzo Demo 2" class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="Screenshot 2026-01-11 093341.png" alt="Sketzo Demo 3" class="carousel-image">
+                            </div>
+                        </div>
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators">
+                            <button class="carousel-dot active" data-slide="0"></button>
+                            <button class="carousel-dot" data-slide="1"></button>
+                            <button class="carousel-dot" data-slide="2"></button>
+                        </div>
+                    </div>
+                    <p class="demo-caption">CAD drawings created with Sketzo while development</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: EARLY ACCESS & JOIN US -->
+        <section id="join" class="content-section join-section">
+            <div class="section-container">
+                <h2 class="section-title">Join the Journey</h2>
+                <div class="join-content">
+                    <div class="pixel-card join-card">
+                        <p class="join-text">
+                            We're building Sketzo in the open, and we'd love for you to be part of it.
+                            Early access members get first look at new features, direct input on what we build next,
+                            and a community of fellow creators.
+                        </p>
+                        <div class="join-buttons">
+                            <a href="#home" class="pixel-btn primary large">Get Early Access</a>
+                            <a href="#" class="pixel-btn secondary large" target="_blank" rel="noopener">Join
+                                Community</a>
+                        </div>
+                        <!-- Social Icons -->
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" title="Instagram" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon" title="LinkedIn" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon" title="Discord" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: BLOGS -->
+        <section id="blog" class="content-section blog-section">
+            <div class="section-container">
+                <h2 class="section-title">From the Studio</h2>
+                <p class="section-subtitle">Updates, ideas, and behind-the-scenes looks at what we're building</p>
+                <div class="blog-carousel-wrapper">
+                    <button class="blog-nav-arrow blog-nav-prev" aria-label="Previous blogs">◄</button>
+                    <div class="blog-grid">
+                        <div class="blog-card" data-blog="1">
+                            <div class="blog-image" style="background-color: var(--grass-sage);">
+                                <span>📝</span>
+                            </div>
+                            <div class="blog-content">
+                                <span class="blog-tag">Update</span>
+                                <h3 class="blog-title">Building in Public</h3>
+                                <p class="blog-excerpt">Why we're sharing our journey and what you can expect from us.
+                                </p>
+                                <button class="blog-link" data-blog-id="1">Read more →</button>
+                            </div>
+                            <div class="blog-full-content" hidden>
+                                <p>We believe in transparency and community. That's why we're building Sketzo in public,
+                                    sharing our wins, challenges, and everything in between.</p>
+                                <p>You can expect regular updates on our progress, behind-the-scenes looks at new
+                                    features,
+                                    and honest conversations about what's working and what isn't.</p>
+                                <p>Join us on this journey and help shape the future of CAD design!</p>
+                            </div>
+                        </div>
+                        <div class="blog-card" data-blog="2">
+                            <div class="blog-image" style="background-color: var(--field-gold);">
+                                <span>💡</span>
+                            </div>
+                            <div class="blog-content">
+                                <span class="blog-tag">Ideas</span>
+                                <h3 class="blog-title">The Tools We Love</h3>
+                                <p class="blog-excerpt">A look at what inspires Sketzo and the tools that shaped our
+                                    thinking.</p>
+                                <button class="blog-link" data-blog-id="2">Read more →</button>
+                            </div>
+                            <div class="blog-full-content" hidden>
+                                <p>Every great product is built on the shoulders of inspiring tools. Here are some that
+                                    shaped our thinking:</p>
+                                <p>From the simplicity of Notion to the precision of AutoCAD, we've drawn inspiration
+                                    from
+                                    tools that make complex things feel simple.</p>
+                                <p>Our goal is to bring that same feeling to CAD design - powerful enough for
+                                    professionals,
+                                    simple enough for beginners.</p>
+                            </div>
+                        </div>
+                        <div class="blog-card" data-blog="3">
+                            <div class="blog-image" style="background-color: var(--sky-blue);">
+                                <span>🎬</span>
+                            </div>
+                            <div class="blog-content">
+                                <span class="blog-tag">Behind the Scenes</span>
+                                <h3 class="blog-title">Making Pixels Work</h3>
+                                <p class="blog-excerpt">How we achieved that pixel-perfect aesthetic across the
+                                    platform.
+                                </p>
+                                <button class="blog-link" data-blog-id="3">Read more →</button>
+                            </div>
+                            <div class="blog-full-content" hidden>
+                                <p>Creating a pixel-art aesthetic that feels authentic while remaining functional was
+                                    one of
+                                    our biggest design challenges.</p>
+                                <p>We spent weeks perfecting every border, shadow, and animation to capture that retro
+                                    gaming feel while keeping the interface modern and usable.</p>
+                                <p>The result? A unique visual identity that makes Sketzo instantly recognizable.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Blog 4 - Hidden initially -->
+                    <div class="blog-card blog-hidden" data-blog="4" data-page="2">
+                        <div class="blog-image" style="background-color: var(--accent-rust);">
+                            <span>🚀</span>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-tag">Roadmap</span>
+                            <h3 class="blog-title">What's Next for Sketzo</h3>
+                            <p class="blog-excerpt">A sneak peek at upcoming features and our product roadmap.</p>
+                            <button class="blog-link" data-blog-id="4">Read more →</button>
+                        </div>
+                        <div class="blog-full-content" hidden>
+                            <p>We're excited to share what's coming next for Sketzo! Our roadmap is packed with features
+                                that will make CAD design even more accessible.</p>
+                            <p>Coming soon: 3D preview mode, collaborative editing, component libraries, and advanced AI
+                                suggestions. We're building the future of accessible CAD.</p>
+                            <p>Stay tuned for monthly updates as we roll out these features to our early access
+                                community first!</p>
+                        </div>
+                    </div>
+                    <!-- Blog 5 - Hidden initially -->
+                    <div class="blog-card blog-hidden" data-blog="5" data-page="2">
+                        <div class="blog-image" style="background-color: var(--forest-mid);">
+                            <span>👥</span>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-tag">Community</span>
+                            <h3 class="blog-title">Stories from Our Users</h3>
+                            <p class="blog-excerpt">Real projects and creations from the Sketzo community.</p>
+                            <button class="blog-link" data-blog-id="5">Read more →</button>
+                        </div>
+                        <div class="blog-full-content" hidden>
+                            <p>Our community never stops amazing us. From engineering students designing their first
+                                bracket to hobbyists creating custom furniture plans.</p>
+                            <p>We've seen everything from 3D printer parts to architectural concepts, all created by
+                                people who had never used CAD software before Sketzo.</p>
+                            <p>Want to be featured? Share your creations with us and join a community of makers who
+                                believe design should be accessible to everyone.</p>
+                        </div>
+                    </div>
+                    <!-- Blog 6 - Hidden initially -->
+                    <div class="blog-card blog-hidden" data-blog="6" data-page="2">
+                        <div class="blog-image" style="background-color: var(--earth-warm);">
+                            <span>🎨</span>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-tag">Design</span>
+                            <h3 class="blog-title">The Evolution of Our UI</h3>
+                            <p class="blog-excerpt">How Sketzo's interface evolved from concept to what you see today.
+                            </p>
+                            <button class="blog-link" data-blog-id="6">Read more →</button>
+                        </div>
+                        <div class="blog-full-content" hidden>
+                            <p>Sketzo's UI went through dozens of iterations before we landed on the current design. It
+                                started as a simple wireframe tool and evolved into the pixel-art wonderland you see
+                                today.</p>
+                            <p>We experimented with dark themes, neon colors, and even a cyberpunk aesthetic before
+                                settling on our cozy meadow theme that feels both professional and approachable.</p>
+                            <p>Every pixel was placed with intention, balancing nostalgia with modern usability.</p>
+                        </div>
+                    </div>
+                    <button class="blog-nav-arrow blog-nav-next" aria-label="Next blogs">►</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Blog Modal Popup -->
+    <div id="blogModal" class="blog-modal" hidden>
+        <div class="blog-modal-overlay"></div>
+        <div class="blog-modal-content">
+            <button class="blog-modal-close" aria-label="Close">✕</button>
+            <div class="blog-modal-header">
+                <span class="blog-modal-tag"></span>
+                <h2 class="blog-modal-title"></h2>
+            </div>
+            <div class="blog-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="pixel-footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>© 2026 Sketzo. Made with ♥ and pixels.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+
+    <!-- Firebase Config -->
+    <script src="firebase-config.js"></script>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

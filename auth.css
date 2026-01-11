@@ -1,0 +1,304 @@
+/* ============================================
+   Authentication Modal Styles
+   Pixel Art Theme
+   ============================================ */
+
+/* Utility */
+.hidden {
+    display: none !important;
+}
+
+/* Modal Container */
+.auth-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-modal.active {
+    display: flex;
+}
+
+/* Backdrop */
+.auth-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(58, 56, 56, 0.8);
+}
+
+/* Modal Content */
+.auth-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    background-color: rgba(90, 106, 90, 0.95);
+    border: 6px solid var(--forest-deep);
+    box-shadow: 8px 8px 0 var(--earth-dark);
+    padding: var(--spacing-lg);
+    text-align: center;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Close Button */
+.auth-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    background-color: var(--accent-rust);
+    border: 3px solid var(--earth-dark);
+    color: var(--text-light);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-close-btn:hover {
+    background-color: var(--accent-orange);
+}
+
+/* Title */
+.auth-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-xs);
+    text-shadow: 2px 2px 0 var(--forest-deep);
+}
+
+.auth-subtitle {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    color: var(--text-cream);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Auth Video */
+.auth-video {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto var(--spacing-md);
+    display: block;
+    border: 4px solid var(--forest-deep);
+    box-shadow: 4px 4px 0 var(--earth-dark);
+}
+
+/* Tabs */
+.auth-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: var(--spacing-md);
+}
+
+.auth-tab {
+    flex: 1;
+    padding: var(--spacing-sm);
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    background-color: var(--forest-deep);
+    border: 3px solid var(--pixel-border);
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.auth-tab.active {
+    background-color: var(--forest-mid);
+    color: var(--highlight);
+    border-color: var(--highlight);
+}
+
+.auth-tab:hover:not(.active) {
+    background-color: var(--forest-mid);
+}
+
+/* Google Button */
+.google-btn {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: #ffffff;
+    border: 4px solid var(--earth-dark);
+    box-shadow: 4px 4px 0 var(--earth-dark);
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.google-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--earth-dark);
+}
+
+.google-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+/* Divider */
+.auth-divider {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background-color: var(--forest-deep);
+}
+
+.auth-divider span {
+    padding: 0 var(--spacing-sm);
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    color: var(--text-muted);
+}
+
+/* Form */
+.auth-form {
+    text-align: left;
+}
+
+.auth-form.hidden {
+    display: none;
+}
+
+.auth-form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.auth-form-group label {
+    display: block;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px;
+    color: var(--highlight);
+    margin-bottom: var(--spacing-xs);
+}
+
+.auth-form-group input {
+    width: 100%;
+    padding: var(--spacing-sm);
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    background-color: var(--text-dark);
+    border: 3px solid var(--forest-deep);
+    color: var(--text-light);
+}
+
+.auth-form-group input:focus {
+    outline: none;
+    border-color: var(--highlight);
+}
+
+.auth-form-group input::placeholder {
+    color: var(--text-muted);
+}
+
+/* Submit Button */
+.auth-submit-btn {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-family: 'VT323', monospace;
+    font-size: 22px;
+    background-color: var(--accent-orange);
+    border: 4px solid var(--accent-rust);
+    box-shadow: 4px 4px 0 var(--earth-dark);
+    color: var(--text-light);
+    cursor: pointer;
+    margin-top: var(--spacing-sm);
+}
+
+.auth-submit-btn:hover {
+    background-color: var(--highlight);
+    color: var(--text-dark);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--earth-dark);
+}
+
+.auth-submit-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+/* Success Message */
+.auth-success {
+    padding: var(--spacing-md);
+}
+
+.auth-success.hidden {
+    display: none;
+}
+
+.auth-success .success-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--spacing-md);
+    background-color: var(--grass-sage);
+    border: 4px solid var(--forest-deep);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: var(--text-light);
+}
+
+.auth-success h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-sm);
+}
+
+.auth-success p {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    color: var(--text-cream);
+}
+
+/* Error Message */
+.auth-error {
+    background-color: var(--accent-rust);
+    border: 3px solid var(--earth-dark);
+    padding: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    color: var(--text-light);
+}
+
+.auth-error.hidden {
+    display: none;
+}
+
+/* Loading State */
+.auth-submit-btn.loading,
+.google-btn.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.auth-submit-btn.loading::after,
+.google-btn.loading::after {
+    content: '...';
+}
