@@ -67,7 +67,7 @@ body {
 
     /* About Section - specific height control */
     .about-section {
-        min-height: 30vh !important;
+        min-height: 15vh !important;
         /* Control section height */
         padding: 5px 16px !important;
     }
@@ -89,6 +89,13 @@ body {
         font-size: 0.95rem;
         /* Smaller text */
         line-height: 1.4;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Remove padding from the card box itself */
+    .about-card {
+        padding: 5px !important;
     }
 
     .about-image {
