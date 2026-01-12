@@ -451,6 +451,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (authSuccess) {
             authSuccess.classList.remove('hidden');
+            authSuccess.classList.add('active');
         }
     }
 
